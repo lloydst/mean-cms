@@ -18,6 +18,14 @@ router.get('/page', function(req, res) {
         res.send(Pages)
     })
 })
+router.get('/page/:page', function(req,res) {
+    Page.find({title: req.param('page')},function(err,Page){
+        if(err) {
+            console.log(err)
+        }
+        res.send(Page)
+    })
+})
 /**
  * new page
  */

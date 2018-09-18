@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StyleGuideComponent } from './style-guide/style-guide.component';
-import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
+import { PageBuilderComponent } from './page-builder/page-builder.component';
 
 const routes: Routes = [
     {
-        path: '', redirectTo: 'home', pathMatch:'full'
+        path: '', redirectTo: 'home', pathMatch: 'full'
+    },
+    {
+        path: 'admin', component: AdminComponent
     },
     {
         path: 'style', component: StyleGuideComponent
     },
-    { 
-        path: 'home', component: HomeComponent 
-    }
+    {
+        path: ':page', component: PageBuilderComponent
+    },
+
 
 
 ];

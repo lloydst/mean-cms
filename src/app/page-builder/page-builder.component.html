@@ -1,0 +1,7 @@
+<div class="row" *ngFor="let p of page">
+    {{p.title}}
+    <div *ngFor="let section of p.article" [class]="section.type">
+        <p>{{section.text}}</p>
+        <img [src]="section.src" alt="" srcset=""> 
+    </div>
+</div>

@@ -8,9 +8,16 @@ var PageSchema = new Schema({
     article: {
         type: Array,
         sections: {
-            type: { enum: ['paragraph', 'paragraph w text left','paragraph w text right']},
-            src:String,
+            type: {
+                enum: [
+                    'paragraph',
+                    'paragraphTextLeft',
+                    'paragraphTextRight'
+                ]
+            },
+            src: String,
             text: String
+            // form:
         }
     }
 });
@@ -30,5 +37,4 @@ var Page = mongoose.model('Page', PageSchema);
 ]
  */
 
-// make this available to our users in our Node applications
 module.exports = Page;

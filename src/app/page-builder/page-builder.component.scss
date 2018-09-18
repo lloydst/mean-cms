@@ -1,0 +1,25 @@
+.paragraph {
+    font-style: italic;
+}
+
+.paragraphTextLeft {
+    text-align: left;
+    p {
+        width: 70%;
+    }
+    img {
+        width: 30%;
+        height: auto;
+    }
+}
+
+.paragraphTextRight {
+    text-align: right;
+    p {
+        width: 70%
+    }
+    img {
+        width: 30%;
+        height: auto;
+    }
+}
