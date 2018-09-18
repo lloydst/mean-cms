@@ -1,0 +1,10 @@
+<div class="row">
+    Current pages:
+    <div *ngFor="let p of pages">
+        {{p.title}} {{p.status}}
+        <button class="button">edit</button>
+        <button class="button">delete</button>
+        <button class="button">change status</button>
+    </div>
+    <a routerLink="/admin/create">new page</a>
+</div>

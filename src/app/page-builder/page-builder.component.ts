@@ -5,18 +5,21 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-page-builder',
   templateUrl: './page-builder.component.html',
-  styleUrls: ['./page-builder.component.scss']
 })
 export class PageBuilderComponent implements OnInit {
 
-    url
-    page; // htmlbinding
+    url: String;
+    page: any=[]; // htmlbinding array is so it doesnt complain about .length
     constructor(
         private _page: PageService,
         private router: Router
     ) { }
 
     ngOnInit() {
+        /**
+         * reusestrategy is required to reroute on each topnav click (else the param would change but not rerendered)
+         */
+        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
         this.getCurrentPage()
     }
     getCurrentPage() {

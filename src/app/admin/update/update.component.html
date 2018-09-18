@@ -1,0 +1,11 @@
+<p>
+  update works!
+</p>
+
+<!--this does needs to be updated every time the page builder gets updated-->
+live Preview:
+
+<div *ngFor="let section of pageUpdateForm.value.article" [class]="section.type">
+    <p>{{section.text}}</p>
+    <img [src]="section.src" alt="" srcset="">
+</div>

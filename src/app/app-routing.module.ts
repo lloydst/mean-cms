@@ -9,17 +9,15 @@ const routes: Routes = [
         path: '', redirectTo: 'home', pathMatch: 'full'
     },
     {
-        path: 'admin', component: AdminComponent
+        path: 'admin',
+        loadChildren: 'app/admin/admin.module#AdminModule',
     },
     {
-        path: 'style', component: StyleGuideComponent
+        path: 'style', component: StyleGuideComponent // temp / dev only
     },
     {
-        path: ':page', component: PageBuilderComponent
+        path: ':page', component: PageBuilderComponent // !!!NEEDS TO BE LAST (or other routes wont work)!!! builds pages from json
     },
-
-
-
 ];
 
 @NgModule({

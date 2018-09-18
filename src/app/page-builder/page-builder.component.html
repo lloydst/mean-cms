@@ -1,7 +1,17 @@
-<div class="row" *ngFor="let p of page">
-    {{p.title}}
-    <div *ngFor="let section of p.article" [class]="section.type">
-        <p>{{section.text}}</p>
-        <img [src]="section.src" alt="" srcset=""> 
+<!-- no Page found-->
+
+
+<div class="row" *ngIf="page.length == 0">
+    ERROR Page: {{this.url}} not found
+</div>
+
+
+<!-- Page found-->
+<div *ngIf="page.length > 0">
+    <div class="row" *ngFor="let p of page">
+        <div *ngFor="let section of p.article" [class]="section.type">
+            <p>{{section.text}}</p>
+            <img [src]="section.src" alt="" srcset="">
+        </div>
     </div>
 </div>
