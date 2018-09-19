@@ -19,7 +19,7 @@ router.get('/page', function(req, res) {
     })
 })
 router.get('/page/:page', function(req,res) {
-    Page.find({title: req.param('page')},function(err,Page){
+    Page.find({title: req.params.page},function(err,Page){
         if(err) {
             console.log(err)
         }
