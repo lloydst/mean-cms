@@ -27,7 +27,6 @@ router.get('/page/:page', function(req,res) {
     })
 })
 router.post('/page',function(req,res){
-    
     Page.create(req.body, function (err, doc) {
         if (err) {
             res.send(err)
@@ -40,32 +39,15 @@ router.post('/page',function(req,res){
 /**
  * new page
  */
-router.put('/page', function (req, res) {
-    // checks if channel already exists
-    check()
-    setTimeout(() => {
-        updateCreateGet()
-    }, 200);
+router.put('page', function(req, res) {
+    /**
+     * check for page with the same name
+     * if it doesn't end with -edit or -draft
+     * don't create & send error
+     * if it does have a document with the same name find its _id update that with the original req.body
+     * 
+     * 
+     */
     
-    // if it exists it will update
-    function updateCreateGet() {
-
-        if (exists) {
-            Page.findOneAndUpdate({ title: req.body.title }, req.body, function (err, doc) {
-                if (err) {
-                    console.log(err)
-                }
-                res.json({ message: 'channel updated' });
-            })
-            // if it doesn't it wil create
-        } else if (!exists) {
-            Page.create(req.body, function (err, doc) {
-                if (err) {
-                    res.send(err)
-                }
-                res.json({ message: 'channel created' });
-            })
-        }
-    }
 })
 module.exports = router;
