@@ -1,7 +1,8 @@
 .wrapper {
     display: grid;
     grid-gap: 10px;
-    grid-template-rows: 0 1fr;
+    grid-template-rows: 1fr 1fr 0 1fr 1fr; // having 0 for the router does apply the gap too it but meh
+    margin:1em;
 }
 
 .wrapper__row {
@@ -21,7 +22,7 @@
         margin: 0 10em 0 10em;
         display: grid;
         grid-gap: 10px;
-        grid-template-rows: 0 1fr;
+        grid-template-rows: 1fr;
     }
 
     .wrapper__row {
