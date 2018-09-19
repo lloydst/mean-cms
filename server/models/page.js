@@ -13,6 +13,7 @@ var PageSchema = new Schema({
                     'paragraph',
                     'paragraphTextLeft',
                     'paragraphTextRight'
+                    // these can be and should be expanded when new 'templates are added'
                 ]
             },
             src: String,
@@ -22,19 +23,5 @@ var PageSchema = new Schema({
     }
 });
 var Page = mongoose.model('Page', PageSchema);
-
-/**
- * [
-    {
-        "_id": "5b9fb18e739a5416088e2f03",
-        "title": "some title",
-        "__v": 0,
-        "article": [ // epandable
-            "{sections: ['paragraph'], needs to be a option
-            src:'',text: 'insert profound text here!'}"
-        ]
-    }
-]
- */
 
 module.exports = Page;
