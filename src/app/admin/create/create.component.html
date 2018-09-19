@@ -1,4 +1,14 @@
 <div class="row">
+    <div *ngIf="notice">
+        <div *ngIf="notice.title">
+            {{notice.title}} succesfully created click here to go to the edit page and click on the following link to view it on the client
+        </div>
+        <!--{{notice |json}}-->
+        <div *ngIf="notice.code == 11000">
+            this page already exist. please edit the existing page to make changes
+        </div>
+    </div>
+    
     <div *ngIf="saved">
         page has been succesfully updated
     </div>

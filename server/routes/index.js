@@ -26,6 +26,17 @@ router.get('/page/:page', function(req,res) {
         res.send(Page)
     })
 })
+router.post('/page',function(req,res){
+    
+    Page.create(req.body, function (err, doc) {
+        if (err) {
+            res.send(err)
+        } else {
+            res.send(doc);
+        }
+
+    })
+})
 /**
  * new page
  */
@@ -35,19 +46,7 @@ router.put('/page', function (req, res) {
     setTimeout(() => {
         updateCreateGet()
     }, 200);
-    function check() { // sets exists to true if it exists
-        Page.find({ title: req.body.title }, function (err, doc) {
-            if (doc.length == 0) {
-                exists = false
-                return exists
-                //res.send(doc)
-            } else if (doc[0].title === req.body.title) {
-                exists = true
-                return exists
-            }
-
-        })
-    }
+    
     // if it exists it will update
     function updateCreateGet() {
 

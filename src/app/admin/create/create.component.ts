@@ -7,7 +7,7 @@ import { PageService } from '../../_services/page.service';
   templateUrl: './create.component.html',
 })
 export class CreateComponent implements OnInit {
-
+    notice:any;
     /**
        * boolean for a show updated message
        */
@@ -74,12 +74,11 @@ export class CreateComponent implements OnInit {
      * @param form form value
      */
     save(form) {
-        this.page.newOrUpdate(form).subscribe(() => {
-            setTimeout(() => {
-                this.saved = false
-            }, 2000);
-            this.saved = true
-        })
+        this.page.create(form).subscribe(message => {
+            this.notice =message
+            
+    },err => {
+        console.log(err)
+    })
     }
-
 }

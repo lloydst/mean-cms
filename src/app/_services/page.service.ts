@@ -17,4 +17,7 @@ export class PageService {
   newOrUpdate(page) {
     return this.http.put('/api/page', page)
   }
+  create(page) {
+      return this.http.post('api/page', page)
+  }
 }
