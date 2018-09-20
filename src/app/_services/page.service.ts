@@ -14,7 +14,7 @@ export class PageService {
   allPages() {
     return this.http.get('/api/page')
   }
-  newOrUpdate(page) {
+  update(_id: String, page) {
     return this.http.put('/api/page', page)
   }
   create(page) {

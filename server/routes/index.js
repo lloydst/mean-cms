@@ -39,15 +39,21 @@ router.post('/page',function(req,res){
 /**
  * new page
  */
-router.put('page', function(req, res) {
+router.put('/page', function(req, res) {
+
+        Page.findOneAndUpdate({title: req.body.title},req.body, function(err, page){
+            if (err) {
+                res.send(err)
+            }
+            res.send(page)
+        })
+
+
     /**
      * check for page with the same name
      * if it doesn't end with -edit or -draft
      * don't create & send error
      * if it does have a document with the same name find its _id update that with the original req.body
-     * 
-     * 
      */
-    
 })
 module.exports = router;
