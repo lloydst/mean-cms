@@ -1,2 +1,7 @@
-<h1 class="header__title">i am the header title</h1>
+<div class="header__title">
+    <h1 [ngStyle]="{ background: 'url(' + headData[0].img + ')'}">
+        {{ headData[0].title }}
+    </h1>
+</div>
+
 <!-- can be removed in the app component.html-->

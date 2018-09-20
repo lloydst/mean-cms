@@ -100,6 +100,11 @@ body {
   text-align: center;
 }
 
+.header__title h1 {
+  margin: 0;
+  padding: 1em;
+}
+
 .topnav {
   display: grid;
   grid-gap: 10px;

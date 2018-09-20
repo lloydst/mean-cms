@@ -6,6 +6,8 @@ import { UpdateComponent } from './update/update.component';
 import { AdminComponent } from './admin.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
     imports: [
@@ -18,7 +20,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         AdminComponent,
         ListComponent,
         CreateComponent,
-        UpdateComponent
+        UpdateComponent,
+        FooterComponent,
+        HeaderComponent
     ]
 })
 export class AdminModule { }
