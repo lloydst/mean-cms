@@ -1,5 +1,5 @@
 <div class="header__title">
-    <h1 [ngStyle]="{ background: 'url(' + headData[0].img + ')'}">
+    <h1  [style.background]="'url(' + headData[0].img + ')'"[style.background-repeat]="'no-repeat'" [style.background-size]="'cover'">
         {{ headData[0].title }}
     </h1>
 </div>

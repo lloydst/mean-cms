@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class HeaderService {
 
-  constructor(private http: HttpClient) { }
-  get() {
-      return this.http.get('/api/header');
-  }
-  create(header) {
-      return this.http.post('/api/header',header);
-  }
+    constructor(private http: HttpClient) { }
+    get() {
+        return this.http.get('/api/header');
+    }
+    create(header) {
+
+        return this.http.put('/api/header', header);
+    }
 }

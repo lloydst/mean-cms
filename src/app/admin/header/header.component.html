@@ -71,11 +71,3 @@
     this form will eventually include a method to dynamicly add forms (the forms still need to be supported on the
     backend)
 </div>
-
-<!--this does needs to be updated every time the page builder gets updated-->
-live Preview:
-
-<div *ngFor="let section of pageCreateForm.value.article" [class]="section.type">
-    <p>{{section.text}}</p>
-    <img [src]="section.src" alt="" srcset="">
-</div>

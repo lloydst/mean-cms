@@ -93,11 +93,20 @@ router.get('/header', function (req, res) {
         res.send(doc)
     })
 })
-router.post('/header', function (req, res) {
-    Header.create(req.body, function (err, head) {
-        if (err) {
+router.put('/header', function (req, res) {
+    Header.findOneAndUpdate({_id: req.body.id},req.body, function (err, head) {
+        // if req.body.id is a empty string(wich it will be if no header exists) create instead of trow error
+        if (req.body.id === ''){
+            Header.create({
+                img:req.body.img,
+                style: req.body.style,
+                title:req.body.title
+            })
+        }
+        else if (err) {
             res.send(err)
         }
+
         res.send(head)
     })
 })

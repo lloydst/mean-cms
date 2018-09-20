@@ -9,26 +9,25 @@ import { HeaderService } from '../../_services/header.service';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    headData
     form = new FormGroup({
         title: new FormControl(''),
         img: new FormControl(''),
-        style: new FormControl('')
+        style: new FormControl(''),
+        id: new FormControl('')
     });
 
     constructor(private head: HeaderService) { }
 
-    ngOnInit() {
-    }
-    save(form) {
-        this.head.create(form).subscribe(()=>{
-
+    ngOnInit() { // the id isnt a -html- field so the user cant accedently create new ones
+        this.head.get().subscribe(D => {
+            this.headData = D
+            this.form.setValue({ title: this.headData[0].title, img: this.headData[0].img, style: this.headData[0].style, id: this.headData[0]._id })
         })
     }
-    /**
-     * var HeaderSchema = new Schema({
-        title: String,  // h1
-        img: String,    // imgurl
-        style: String   // classes
-    });
-     */
+    save(form) {
+        this.head.create(form).subscribe(() => {
+        })
+    }
+
 }

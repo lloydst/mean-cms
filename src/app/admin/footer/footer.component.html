@@ -1,3 +1,63 @@
-<p>
-  footer works! so time for a form
-</p>
+<div class="row">
+    <h1>THIS ISNT IMPLEMENTED</h1>
+    create the header
+    <form [formGroup]="form" novalidate (ngSubmit)="save(form.value)">
+        <div class="form__group">
+            <label class="form__group--label">title:
+                <span class="form__group--tooltip">
+                    <span>&#9432;</span>
+                    <div class="form__group--tooltiptext">
+                        your website name
+                    </div>
+                </span>
+            </label>
+            <input type="text" class="form__group--input-text" formControlName="title">
+            <!--<div *ngIf="f.title.touched && f.title.errors" class="admin-wrapper-main__card--form-error">
+                <div *ngIf="f.title.errors.required"> A Channel name is required</div>
+                <div *ngIf="f.title.errors.minlength"> The channel name has to be atleast 5 characters long</div>
+            </div>
+            <!-- {{f.title.errors |json}} -->
+        </div>
+        <div class="form__group">
+            <label class="form__group--label">background image url:
+                <span class="form__group--tooltip">
+                    <span>&#9432;</span>
+                    <div class="form__group--tooltiptext">
+                        if you would like a img on the background place the url here
+                    </div>
+                </span>
+            </label>
+            <input type="text" class="form__group--input-text" formControlName="img">
+            <!--<div *ngIf="f.title.touched && f.title.errors" class="admin-wrapper-main__card--form-error">
+                        <div *ngIf="f.title.errors.required"> A Channel name is required</div>
+                        <div *ngIf="f.title.errors.minlength"> The channel name has to be atleast 5 characters long</div>
+                    </div>
+                    <!-- {{f.title.errors |json}} -->
+        </div>
+        <div class="form__group">
+            <label class="form__group--label">style:
+                <span class="form__group--tooltip">
+                    <span>&#9432;</span>
+                    <div class="form__group--tooltiptext">
+                        you can put some of the predefined classes in here or create your own
+                    </div>
+                </span>
+            </label>
+            <input type="text" class="form__group--input-text" formControlName="style">
+            <!--<div *ngIf="f.title.touched && f.title.errors" class="admin-wrapper-main__card--form-error">
+                <div *ngIf="f.title.errors.required"> A Channel name is required</div>
+                <div *ngIf="f.title.errors.minlength"> The channel name has to be atleast 5 characters long</div>
+            </div>
+            <!-- {{f.title.errors |json}} -->
+        </div>
+        <div>
+            <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
+        </div>
+    </form>
+    this form will eventually include a method to dynamicly add forms (the forms still need to be supported on the
+    backend)
+</div>
+
+<!--this does needs to be updated every time the page builder gets updated-->
+
+
