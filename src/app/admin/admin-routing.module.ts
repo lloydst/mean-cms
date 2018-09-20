@@ -20,7 +20,7 @@ const routes: Routes = [
             { path: 'footer', component: FooterComponent },
             { path: 'header', component: HeaderComponent }
         ]
-    }, // Admin component is only used for its router-outlet tag
+    }, // Admin component is only used for its router-outlet tag (so admin nav can be there)
 
 ];
 

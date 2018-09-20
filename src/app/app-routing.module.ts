@@ -13,7 +13,7 @@ const routes: Routes = [
         loadChildren: 'app/admin/admin.module#AdminModule',
     },
     {
-        path: 'style', component: StyleGuideComponent // temp / dev only
+        path: 'style', component: StyleGuideComponent // temp / dev only // WIP basicly always
     },
     {
         path: ':page', component: PageBuilderComponent // !!!NEEDS TO BE LAST (or other routes wont work)!!! builds pages from json

@@ -1,19 +1,40 @@
-<app-header></app-header>
-<app-topnav></app-topnav>
 <div class="wrapper__padding">
-    <p>this app is just a boiler plate any thing can be replaced from style to components</p>
-    <h1>typography:</h1>
-    <div class="wrapper__row">
-        <h1>h1</h1>
-        <h2>h2</h2>
-        <h3>h3</h3>
-        <h4>h4</h4>
-        <h5>h5</h5>
-        <h6>h6</h6>
+    <div>
+        <h2>table of contents:</h2>
+        <p>[TODO]</p>
+    </div>
+    <div>
+        <h2>header:</h2>
+        <app-header></app-header>
+        <p>the header information comes out of the db</p>
+        <ul>
+            <li>it has text.</li>
+            <li>it has a img url for the background img.</li>
+            <li>it has a field for extra classes ([TODO]predifined ones)</li>
+        </ul>
+    </div>
+    <div>
+        <h2>nav:</h2>
+        <app-topnav></app-topnav>
+        <p>the navigation links are made up of the title's of made pages </p>
+
+    </div>
+    <div>
+        <h2>typography:</h2>
+        <div class="wrapper__row">
+            <h1>h1</h1>
+            <h2>h2</h2>
+            <h3>h3</h3>
+            <h4>h4</h4>
+            <h5>h5</h5>
+            <h6>h6</h6>
+        </div>
     </div>
 
+
+
     <div>
-        <h1>buttons</h1>
+        <h2>buttons</h2>
         <div>there really are only 2 buttons</div>
         <button>
             the one without a class</button><button type="reset" class="button"> and the button with the class
@@ -22,15 +43,15 @@
     </div>
 
     <div>
-        <h1>random</h1>
+        <h2>random/misc</h2>
         <div>now you might not use this one alot but it could be usefull: the
             <code>
-            'code'tag has also been styled so that it looks like githubs code sections
+            'code'tag has also been styled for now it is only typography changes
             </code>
         </div>
     </div>
     <div>
-        <h1>forms</h1>
+        <h2>forms</h2>
         <div>forms have recieved some styling as well
             <form class="form">
                 <div class="form__group">
@@ -46,9 +67,9 @@
         </div>
     </div>
 
-    -->
+
     <div>
-        <h1>lists</h1>
+        <h2>lists</h2>
         <ul>
             <li>unordered</li>
             <ul>
@@ -67,8 +88,16 @@
                 </ul>
             </ol>
         </ol>
-        <h1>media queries:</h1>
-
     </div>
-
+    <div>
+        <h2>media queries:</h2>
+        currently there is only one
+        <pre>@include biggerthen("mobile"){{ '{' }}
+                {{ '}' }}
+                </pre>
+        <p>this makes it so you are forced too make it look good on mobile first then specify different styles for any
+            thing bigger then:
+            mobile,tablet, laptop, desktop (since there are people that use 4 k screens...)
+        </p>
+    </div>
 </div>
